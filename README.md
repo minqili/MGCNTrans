@@ -8,6 +8,12 @@ This repository provides a PyTorch implementation of **MGCNTrans** for 3D human 
 
 The overall framework of MGCNTrans is shown above. Given a sequence of images, a 2D pose estimator first extracts a sequence of 2D poses. Feature embeddings and positional encodings are then used to construct joint tokens, which are processed by stacked STGraphFormer blocks. Each block combines temporal multi-head self-attention (MHSA) with a spatial MHSA+TGCN branch to capture temporal dependencies and spatial relationships among human joints. In the spatial branch, the TGCN-MLP module further refines the joint representations through spatial and channel graph convolutions. Finally, a regression head lifts the refined representations to a 3D human pose sequence.
 
+## Qualitative Comparison
+
+![Qualitative comparison on the Human3.6M dataset](fig/five_groups_data.png)
+
+Qualitative comparison on the **Directions** action from the Human3.6M dataset. From left to right, the columns show the input image, ground truth, DDHPose, PRPose, TCPFormer, and MGCNTrans (Ours). The orange arrows highlight differences in the estimated joint positions. MGCNTrans produces more accurate upper-limb poses and better preserves bone-length consistency and natural motion patterns, resulting in more faithful and structurally coherent 3D pose estimates.
+
 ## Installation
 python 3.7.0  
 pytorch 1.8.1  

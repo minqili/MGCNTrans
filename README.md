@@ -58,7 +58,7 @@ After testing on the MPI-INF-3DHP dataset, an 'inference_data.mat' file is gener
 The result is 'mpii_3dhp_evaluation_activitywise.csv' in the '3dhp_test' folder.
 ```
 
-## visualization
+## Visualization
 Visualization can be done using 'vis.py' in the 'demo' folder.   Modify '--pre' in 'vis.py' to be the training weight address.
 
 First, you need to download YOLOv3 and HRNet pretrained models [here](https://drive.google.com/drive/folders/1twGLYjw0pbSbFjGYw22p5De0qygZ0yc0?usp=sharing) and put it in the './demo/lib/checkpoint' directory. 

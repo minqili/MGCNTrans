@@ -87,7 +87,7 @@ After evaluation on MPI-INF-3DHP, an `inference_data.mat` file will be generated
 
 To visualize model predictions, use the `demo/vis.py` script with the `--pre` argument set to the path of your trained checkpoint.
 
-Before running the visualization, download the pretrained YOLOv3 and HRNet models from [this Google Drive link](https://drive.google.com/drive/folders/1twGLYjw0pbSbFjGYw22p5De0qygZ0yc0?usp=sharing) and place them in the `./demo/lib/checkpoint` directory.
+Before running the visualization, download the pretrained YOLOv3 and HRNet models from [this Google Drive link](https://drive.google.com/drive/folders/1P5VfcLUKKZwK-PZurQG8fqcrVvW1xmGN) and place them in the `./demo/lib/checkpoint` directory.
 
 Place your input videos in the `./demo/video` folder. The visualization results will be saved under `./demo/demo`.
 

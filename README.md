@@ -25,10 +25,10 @@ MATLAB 2020a
 ## Dataset setup
 
 ### Human3.6M
-Please download the dataset from [Human3.6M](http://vision.imar.ro/human3.6m/) website and refer to [VideoPose3D](https://github.com/facebookresearch/VideoPose3D) to set up the Human3.6M dataset ('./dataset' directory). Or you can download the processed data from [here](https://drive.google.com/drive/folders/1_21m_TzMK8-o0n3UYoEW23W8HyPWyOTU?usp=sharing). 
+Please download the dataset from [Human3.6M](http://vision.imar.ro/human3.6m/) website and refer to [VideoPose3D](https://github.com/facebookresearch/VideoPose3D) to set up the Human3.6M dataset ('./dataset' directory). Or you can download the processed data from [here](https://drive.google.com/drive/folders/1E82Kwtjjvh4pnaCShsymI06pqJ76Hqru). 
 
 ### MPI-INF-3DHP
-We set up the MPI-INF-3DHP dataset by ourselves. We convert the original data in `.mat` format to the processed data in `.npz` format by using `data_to_npz_3dhp.py` and `data_to_npz_3dhp_test.py`. You can download the processed data from [here](https://drive.google.com/drive/folders/1_21m_TzMK8-o0n3UYoEW23W8HyPWyOTU?usp=sharing). Put them in the `./dataset` directory. In addition, if you want to get the PCK and AUC metrics on this dataset, you also need to download the original dataset from the [official website](https://vcai.mpi-inf.mpg.de/3dhp-dataset/). After downloading the dataset, you can place the `TS1` to `TS6` folders in the test set under the `./3dhp_test` folder in this repo. 
+We set up the MPI-INF-3DHP dataset by ourselves. We convert the original data in `.mat` format to the processed data in `.npz` format by using `data_to_npz_3dhp.py` and `data_to_npz_3dhp_test.py`. You can download the processed data from [here](https://drive.google.com/drive/folders/1E82Kwtjjvh4pnaCShsymI06pqJ76Hqru). Put them in the `./dataset` directory. In addition, if you want to get the PCK and AUC metrics on this dataset, you also need to download the original dataset from the [official website](https://vcai.mpi-inf.mpg.de/3dhp-dataset/). After downloading the dataset, you can place the `TS1` to `TS6` folders in the test set under the `./3dhp_test` folder in this repo. 
 
 ```bash
 ${MGCNTrans}/
@@ -42,13 +42,13 @@ ${MGCNTrans}/
 
 ## Trained from scratch and Evaluating our models
 ### Human3.6M
-Trained weights for the MGCNTrans on Human3.6M dataset can be found [here](https://drive.google.com/drive/folders/1t1CF6XNFJoHMNUq181-VosDSvBTPIMbW?usp=sharing). Put pre-training weights under 'checkpoint'. The parameters we used to train these weights were:
+To train MGCNTrans from scratch on the Human3.6M dataset, use the following command with the specified training parameters:
 ```
 python run_mgcntrans_h36m.py --batch_size 256 --num_workers 2 --epochs 60 --keypoints gt --hid_dim 256 --intermediate --pred_dropout 0.2 --augment  
 ```
 
 ### MPI-INF-3DHP
-Trained weights for the MGCNTrans on MPI-INF-3DHP dataset can be found [here](https://drive.google.com/drive/folders/1t1CF6XNFJoHMNUq181-VosDSvBTPIMbW?usp=sharing). The parameters we used to train these weights were:
+To train MGCNTrans from scratch on the MPI-INF-3DHP dataset, use the following command with the specified training parameters:
 ```
 python run_mgcntrans_3dhp.py --batch_size 256 --num_workers 2 --epochs 60 --keypoints gt --hid_dim 256 --intermediate --pred_dropout 0.2 --augment  
 ```
@@ -58,7 +58,7 @@ After testing on the MPI-INF-3DHP dataset, an 'inference_data.mat' file is gener
 The result is 'mpii_3dhp_evaluation_activitywise.csv' in the '3dhp_test' folder.
 ```
 
-## Visualization
+## visualization
 Visualization can be done using 'vis.py' in the 'demo' folder.   Modify '--pre' in 'vis.py' to be the training weight address.
 
 First, you need to download YOLOv3 and HRNet pretrained models [here](https://drive.google.com/drive/folders/1twGLYjw0pbSbFjGYw22p5De0qygZ0yc0?usp=sharing) and put it in the './demo/lib/checkpoint' directory. 

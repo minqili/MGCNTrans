@@ -36,7 +36,7 @@ def parse_args():
     # General arguments
     parser.add_argument('-id', '--id', default='TEST', type=str, metavar='NAME', help='experiment ID for ')
     parser.add_argument('-d', '--dataset', default='h36m', type=str, metavar='NAME', help='target dataset')
-    parser.add_argument('-k', '--keypoints', default='gt', type=str, metavar='NAME', help='2D detections to use')
+    parser.add_argument('-k', '--keypoints', default='cpn', type=str, metavar='NAME', help='2D detections to use')
     parser.add_argument('-a', '--actions', default='*', type=str, metavar='LIST',
                         help='actions to train/test on, separated by comma, or * for all')
     parser.add_argument('--evaluate', default='', type=str, metavar='FILENAME',
